@@ -48,8 +48,33 @@ class _SoccerAppState extends State<SoccerApp> {
           if (snapshot.hasData) {
             return PageBody(snapshot.data!);
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 200),
+                    child: Image.asset(
+                      "assets/salah_wait.png",
+                      width: 180,
+                      height: 180,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  const Text(
+                    "No Current Matches are being played!",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 26, color: Colors.black26),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  const CircularProgressIndicator(),
+                ],
+              ),
             );
           }
         }),
