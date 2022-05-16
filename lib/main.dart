@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:soccer_score/pagerbody.dart';
+import 'package:soccer_score/soccermodel.dart';
+
+import 'api_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +41,18 @@ class _SoccerAppState extends State<SoccerApp> {
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
+      ),
+      body: FutureBuilder<List<SoccerMatch>>(
+        future: SoccerApi().getAllMatches(),
+        builder: ((context, snapshot) {
+          if (snapshot.hasData) {
+            return PageBody(snapshot.data!);
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        }),
       ),
     );
   }
