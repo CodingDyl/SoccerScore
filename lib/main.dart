@@ -36,9 +36,19 @@ class _SoccerAppState extends State<SoccerApp> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0.0,
-        title: const Text(
-          "CheckUp",
-          style: TextStyle(color: Colors.black),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text("Score", style: TextStyle(color: Colors.black)),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              "Check",
+              style: TextStyle(color: Colors.red),
+            )
+          ],
         ),
         centerTitle: true,
       ),
@@ -57,8 +67,8 @@ class _SoccerAppState extends State<SoccerApp> {
                     padding: const EdgeInsets.only(top: 200),
                     child: Image.asset(
                       "assets/salah_wait.png",
-                      width: 180,
-                      height: 180,
+                      width: 200,
+                      height: 200,
                     ),
                   ),
                   const SizedBox(
@@ -72,7 +82,9 @@ class _SoccerAppState extends State<SoccerApp> {
                   const SizedBox(
                     height: 50,
                   ),
-                  const CircularProgressIndicator(),
+                  const CircularProgressIndicator(
+                    color: Colors.red,
+                  ),
                 ],
               ),
             );

@@ -31,18 +31,18 @@ Widget PageBody(List<SoccerMatch> allmatches) {
         flex: 5,
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              color: Color(0xFF4373D9),
+          decoration: const BoxDecoration(
+              color: Colors.red,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40.0),
                   topRight: Radius.circular(40.0))),
           child: Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "MATCHES",
                   style: TextStyle(fontSize: 24.0, color: Colors.white),
                 ),

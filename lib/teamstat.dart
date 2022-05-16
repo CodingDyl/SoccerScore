@@ -6,7 +6,7 @@ Widget teamStat(String team, String logoUrl, String teamName) {
       children: [
         Text(
           team,
-          style: TextStyle(fontSize: 20.0),
+          style: const TextStyle(fontSize: 18.0),
         ),
         const SizedBox(
           height: 10.0,
@@ -22,7 +22,8 @@ Widget teamStat(String team, String logoUrl, String teamName) {
         ),
         Text(
           teamName,
-          style: TextStyle(fontSize: 20.0),
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 18.0),
         ),
         const SizedBox(
           height: 18.0,
